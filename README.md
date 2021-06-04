@@ -11,9 +11,8 @@ go get -u github.com/Raywando/ppscanner
 
 # Demo
 
-```
-cat urls.txt | ppscanner
-echo https://target.com | ppscanner
-```
+`cat urls.txt | ppscanner`
+
+`echo https://target.com | ppscanner`
 
 ![image](https://user-images.githubusercontent.com/33800255/120795894-c34c4100-c542-11eb-9d9b-51414b1ee789.png)
