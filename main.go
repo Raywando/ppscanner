@@ -52,6 +52,7 @@ func main() {
 					chromedp.Navigate(fullUrl),
 					chromedp.ActionFunc(func(ctx context.Context) error {
 					for _, query := range queries {
+						fmt.Printf("im here")
 						property := getProperty(query)
 
 						chromedp.Evaluate(property, &res).Do(ctx)
