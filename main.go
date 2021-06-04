@@ -55,7 +55,7 @@ func main() {
 						fmt.Printf("im here")
 						property := getProperty(query)
 
-						chromedp.Evaluate(property, &res).Do(ctx)
+						err2 = chromedp.Evaluate(property, &res).Do(ctx)
 
 						if strings.Contains(string(res), "Raywando"){
 							fmt.Printf("POLLUTED - %s?%v=Raywando\n", url, query)
@@ -72,10 +72,11 @@ func main() {
 				)
 				cancel()
 
-				
+				/*
 				if err != nil {
 					log.Fatal(err)
 				}
+				*/
 			}
 			wg.Done()
 		}()
