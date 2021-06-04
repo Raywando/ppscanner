@@ -71,10 +71,10 @@ func main() {
 				)
 				cancel()
 
-				/*
+				
 				if err != nil {
 					log.Fatal(err)
-				}*/
+				}
 			}
 			wg.Done()
 		}()
