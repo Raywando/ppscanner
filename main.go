@@ -74,7 +74,7 @@ func main() {
 				cancel()
 				
 				if err2 != nil {
-					fmt.Printf("error in ActionFunc: %s\n", err2)
+					fmt.Printf("error: %s\n", err2)
 				}
 
 				/*
