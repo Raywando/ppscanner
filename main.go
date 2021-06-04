@@ -48,29 +48,37 @@ func main() {
 
 				// run task list
 				var res []byte
-				chromedp.Run(ctx,
+				err2 := chromedp.Run(ctx,
 					chromedp.Navigate(fullUrl),
 					chromedp.ActionFunc(func(ctx context.Context) error {
 					for _, query := range queries {
 						fmt.Printf("im here")
 						property := getProperty(query)
 
-						err2 := chromedp.Evaluate(property, &res).Do(ctx)
+						chromedp.Evaluate(property, &res).Do(ctx)
 
 						if strings.Contains(string(res), "Raywando"){
 							fmt.Printf("POLLUTED - %s?%v=Raywando\n", url, query)
 						}
 
+						/*
 						if err2 != nil {
 							fmt.Printf("error in ActionFunc: %s\n", err2)
 						} else {
 							fmt.Printf("Property %s outputs: %v\n", property, string(res))
 						}
+						*/
 					}
 					return nil
 					}),
 				)
 				cancel()
+				
+				if err2 != nil {
+							fmt.Printf("error in ActionFunc: %s\n", err2)
+						} else {
+							fmt.Printf("Property %s outputs: %v\n", property, string(res))
+						}
 
 				/*
 				if err != nil {
