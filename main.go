@@ -76,8 +76,6 @@ func main() {
 				
 				if err2 != nil {
 							fmt.Printf("error in ActionFunc: %s\n", err2)
-						} else {
-							fmt.Printf("Property %s outputs: %v\n", property, string(res))
 						}
 
 				/*
