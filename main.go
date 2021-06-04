@@ -39,7 +39,7 @@ func main() {
 
 				fullUrl := url+payload
 
-				fmt.Printf("Input url: %s\n", url)
+				//fmt.Printf("Input url: %s\n", url)
 				//fmt.Printf("Full URL: %s\n", fullUrl)
 
 				r, _ := regexp.Compile("__proto__[^=]+")
@@ -52,7 +52,6 @@ func main() {
 					chromedp.Navigate(fullUrl),
 					chromedp.ActionFunc(func(ctx context.Context) error {
 					for _, query := range queries {
-						fmt.Printf("im here")
 						property := getProperty(query)
 
 						chromedp.Evaluate(property, &res).Do(ctx)
@@ -75,8 +74,8 @@ func main() {
 				cancel()
 				
 				if err2 != nil {
-							fmt.Printf("error in ActionFunc: %s\n", err2)
-						}
+					fmt.Printf("error in ActionFunc: %s\n", err2)
+				}
 
 				/*
 				if err != nil {
