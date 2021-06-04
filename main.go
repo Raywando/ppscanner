@@ -60,11 +60,11 @@ func main() {
 							fmt.Printf("POLLUTED - %s?%v=Raywando\n", url, query)
 						}
 
-						/*if err2 != nil {
+						if err2 != nil {
 							fmt.Printf("error in ActionFunc: %s\n", err2)
 						} else {
 							fmt.Printf("Property %s outputs: %v\n", property, string(res))
-						}*/
+						}
 					}
 					return nil
 					}),
