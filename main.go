@@ -39,7 +39,7 @@ func main() {
 
 				fullUrl := url+payload
 
-				//fmt.Printf("Input url: %s\n", url)
+				fmt.Printf("Input url: %s\n", url)
 				//fmt.Printf("Full URL: %s\n", fullUrl)
 
 				r, _ := regexp.Compile("__proto__[^=]+")
